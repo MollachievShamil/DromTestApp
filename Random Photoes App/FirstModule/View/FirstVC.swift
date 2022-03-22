@@ -61,12 +61,11 @@ extension FirstVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? FirstVCCell {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.6) {
                 cell.frame.origin.x = self.view.bounds.width
                 cell.alpha = 0
-
             } completion: { [weak self] _ in
-                self?.presenter.photoModels.remove(at: indexPath.row)
+               self?.presenter.photoModels.remove(at: indexPath.row)
                 collectionView.deleteItems(at: [indexPath])
             }
         }
@@ -92,7 +91,7 @@ extension FirstVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     
     //MARK: - Cell spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
 }
 
