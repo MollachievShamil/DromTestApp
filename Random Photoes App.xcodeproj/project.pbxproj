@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		B3E329EF27E9680C0043B629 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E329EE27E9680C0043B629 /* AppDelegate.swift */; };
 		B3E329F127E9680C0043B629 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E329F027E9680C0043B629 /* SceneDelegate.swift */; };
-		B3E329F327E9680C0043B629 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E329F227E9680C0043B629 /* ViewController.swift */; };
-		B3E329F627E9680C0043B629 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E329F427E9680C0043B629 /* Main.storyboard */; };
 		B3E329F827E9680E0043B629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E329F727E9680E0043B629 /* Assets.xcassets */; };
 		B3E329FB27E9680E0043B629 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E329F927E9680E0043B629 /* LaunchScreen.storyboard */; };
+		B3E32A0327E99D3A0043B629 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0227E99D3A0043B629 /* Router.swift */; };
+		B3E32A0527E99D550043B629 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0427E99D550043B629 /* Assembly.swift */; };
+		B3E32A0727E99D780043B629 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0627E99D780043B629 /* NetworkService.swift */; };
+		B3E32A0927E99D8E0043B629 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0827E99D8E0043B629 /* PhotoModel.swift */; };
+		B3E32A0C27E99DD00043B629 /* FirstPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0B27E99DD00043B629 /* FirstPresenter.swift */; };
+		B3E32A0E27E99DEC0043B629 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0D27E99DEC0043B629 /* FirstVC.swift */; };
+		B3E32A1027E99E020043B629 /* FirstVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E32A0F27E99E020043B629 /* FirstVCCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B3E329EB27E9680C0043B629 /* Random Photoes App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Random Photoes App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E329EE27E9680C0043B629 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E329F027E9680C0043B629 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B3E329F227E9680C0043B629 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B3E329F527E9680C0043B629 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3E329F727E9680E0043B629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E329FA27E9680E0043B629 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E329FC27E9680E0043B629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E32A0227E99D3A0043B629 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B3E32A0427E99D550043B629 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		B3E32A0627E99D780043B629 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B3E32A0827E99D8E0043B629 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		B3E32A0B27E99DD00043B629 /* FirstPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPresenter.swift; sourceTree = "<group>"; };
+		B3E32A0D27E99DEC0043B629 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		B3E32A0F27E99E020043B629 /* FirstVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		B3E329ED27E9680C0043B629 /* Random Photoes App */ = {
 			isa = PBXGroup;
 			children = (
+				B3E32A0A27E99DB10043B629 /* Network */,
+				B3E32A0427E99D550043B629 /* Assembly.swift */,
+				B3E32A0227E99D3A0043B629 /* Router.swift */,
+				B3E32A1327E99E220043B629 /* FirstModule */,
 				B3E329EE27E9680C0043B629 /* AppDelegate.swift */,
 				B3E329F027E9680C0043B629 /* SceneDelegate.swift */,
-				B3E329F227E9680C0043B629 /* ViewController.swift */,
-				B3E329F427E9680C0043B629 /* Main.storyboard */,
 				B3E329F727E9680E0043B629 /* Assets.xcassets */,
 				B3E329F927E9680E0043B629 /* LaunchScreen.storyboard */,
 				B3E329FC27E9680E0043B629 /* Info.plist */,
 			);
 			path = "Random Photoes App";
+			sourceTree = "<group>";
+		};
+		B3E32A0A27E99DB10043B629 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A0627E99D780043B629 /* NetworkService.swift */,
+				B3E32A0827E99D8E0043B629 /* PhotoModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B3E32A1127E99E0E0043B629 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A0D27E99DEC0043B629 /* FirstVC.swift */,
+				B3E32A0F27E99E020043B629 /* FirstVCCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3E32A1227E99E160043B629 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A0B27E99DD00043B629 /* FirstPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3E32A1327E99E220043B629 /* FirstModule */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A1227E99E160043B629 /* Presenter */,
+				B3E32A1127E99E0E0043B629 /* View */,
+			);
+			path = FirstModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +174,6 @@
 			files = (
 				B3E329FB27E9680E0043B629 /* LaunchScreen.storyboard in Resources */,
 				B3E329F827E9680E0043B629 /* Assets.xcassets in Resources */,
-				B3E329F627E9680C0043B629 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E329F327E9680C0043B629 /* ViewController.swift in Sources */,
+				B3E32A0927E99D8E0043B629 /* PhotoModel.swift in Sources */,
+				B3E32A0E27E99DEC0043B629 /* FirstVC.swift in Sources */,
+				B3E32A0327E99D3A0043B629 /* Router.swift in Sources */,
+				B3E32A0C27E99DD00043B629 /* FirstPresenter.swift in Sources */,
+				B3E32A0527E99D550043B629 /* Assembly.swift in Sources */,
+				B3E32A0727E99D780043B629 /* NetworkService.swift in Sources */,
 				B3E329EF27E9680C0043B629 /* AppDelegate.swift in Sources */,
+				B3E32A1027E99E020043B629 /* FirstVCCell.swift in Sources */,
 				B3E329F127E9680C0043B629 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B3E329F427E9680C0043B629 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3E329F527E9680C0043B629 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3E329F927E9680E0043B629 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,7 +337,6 @@
 				INFOPLIST_FILE = "Random Photoes App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,7 +348,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,7 +363,6 @@
 				INFOPLIST_FILE = "Random Photoes App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
