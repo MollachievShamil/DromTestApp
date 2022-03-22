@@ -15,8 +15,6 @@ protocol NetworkServiceProtocol {
 }
 
 class NetworkService: NetworkServiceProtocol {
-    
-    var imageCache = NSCache<NSString, NSData>()
 
     func fetchModels(completion: @escaping([PhotoModel]?) -> Void){
         let urlString = "https://api.unsplash.com/photos/random/?count=6&client_id=9_x587DuHw9DllgT4tNfNTY3V8LrB6Ny92D5LiKAjmI#"

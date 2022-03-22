@@ -15,13 +15,11 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func firstVC()
- 
 }
 
 class Router: RouterProtocol {
     
     var navigationController: UINavigationController?
-    
     var assemblyBuilder: AssemblyBuilderProtocol?
     
     init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol){
@@ -35,6 +33,4 @@ class Router: RouterProtocol {
             navigationController.viewControllers = [firstVC]
         }
     }
-
-   
 }

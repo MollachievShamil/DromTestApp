@@ -9,22 +9,21 @@ import Foundation
 import UIKit
 
 protocol FirstViewProtocol: AnyObject {
-    func reloadCollectionVieww()
+    func reloadCollectionView()
 }
 
 protocol FirstPresenterProtocol: AnyObject{
     init(view: FirstViewProtocol, router: RouterProtocol, networkService: NetworkServiceProtocol)
-    func fetchPhotoModels()
-    var photoModels: [PhotoModel] {get set}
-    func pullTorefresh()
     func getImage(ind: Int, compl: @escaping ((UIImage) -> Void))
+    var photoModels: [PhotoModel] {get set}
+    func fetchPhotoModels()
+    func pullTorefresh()
 }
-
 
 class FirstPresenter: FirstPresenterProtocol {
     
     var imageCache = NSCache<NSString, UIImage>()
-   
+    
     weak var view: FirstViewProtocol?
     var networkService: NetworkServiceProtocol?
     let router: RouterProtocol?
@@ -36,35 +35,37 @@ class FirstPresenter: FirstPresenterProtocol {
         self.router = router
         self.networkService = networkService
     }
-    
+    //MARK: -  fetch Array of urls
     func fetchPhotoModels() {
         networkService?.fetchModels { [weak self] model in
             guard let model = model else { return }
             self?.photoModels = model
             self?.photoModelForRefresh = model
-            self?.view?.reloadCollectionVieww()
+            self?.view?.reloadCollectionView()
         }
     }
     
+    //MARK: - Fetch photos from urls
     func getImage(ind: Int, compl: @escaping ((UIImage) -> Void)) {
        
         let url = photoModels[ind].urls?.small
-        
         if let cachedImage = imageCache.object(forKey: url! as NSString){
             compl(cachedImage)
+       
         } else {
-
-        networkService?.fetcImage(from: photoModels[ind]) { [weak self] image in
-            compl(image!)
-            self?.imageCache.setObject(image!, forKey: url! as NSString)
-            print("image number \(ind) has been cached")
+            networkService?.fetcImage(from: photoModels[ind]) { [weak self] image in
+                guard let image = image else { return }
+                compl(image)
+                self?.imageCache.setObject(image, forKey: url! as NSString)
+                print("image number \(ind) has been cached")
+            }
         }
-      }
     }
     
+    //MARK: - pull to refresh
     func pullTorefresh() {
         photoModels = photoModelForRefresh
-        view?.reloadCollectionVieww()
+        view?.reloadCollectionView()
     }
 }
 

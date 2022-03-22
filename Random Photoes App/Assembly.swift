@@ -23,6 +23,4 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
         view.presenter = presenter
         return view
     }
-
-    
 }

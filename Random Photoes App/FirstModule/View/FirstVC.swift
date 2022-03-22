@@ -34,7 +34,6 @@ class FirstVC: UIViewController {
         DispatchQueue.main.async {
             self.collectionView.refreshControl?.endRefreshing()
         }
-      
     }
     
     func setDelegate() {
@@ -55,9 +54,10 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         presenter.getImage(ind: indexPath.row, compl: { image in
             cell.imageView.image = image
         })
-        
         return cell
     }
+    
+    //MARK: - Delete action
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? FirstVCCell {
@@ -72,35 +72,33 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
     }
     
+    //MARK: - Cell animation
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -200, 0, 0)
         cell.layer.transform = rotationTransform
-
         UIView.animate(withDuration: 0.4) {
             cell.layer.transform = CATransform3DIdentity
         }
     }
     
+    //MARK: -  Cells Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(
             width: (view.frame.size.width) - 20,
             height: (view.frame.size.width)
         )
     }
     
+    //MARK: - Cell spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-    
 }
 
-
+//MARK: - Constraints
 extension FirstVC {
     func setConstraints() {
-        
         view.addSubview(collectionView)
-        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -110,8 +108,9 @@ extension FirstVC {
     }
 }
 
+//MARK: - Extension for delegation
 extension FirstVC: FirstViewProtocol {
-    func reloadCollectionVieww() {
+    func reloadCollectionView() {
         collectionView.reloadData()
     }
 }
