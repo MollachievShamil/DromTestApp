@@ -42,8 +42,8 @@ class FirstVC: UIViewController {
     }
 }
 
-
-extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - CollectionView Delegates
+extension FirstVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.photoModels.count
@@ -64,7 +64,7 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             UIView.animate(withDuration: 0.5) {
                 cell.frame.origin.x = self.view.bounds.width
                 cell.alpha = 0
-                
+
             } completion: { [weak self] _ in
                 self?.presenter.photoModels.remove(at: indexPath.row)
                 collectionView.deleteItems(at: [indexPath])
@@ -81,6 +81,7 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
     }
     
+    
     //MARK: -  Cells Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(
@@ -91,7 +92,7 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     //MARK: - Cell spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 20
     }
 }
 

@@ -51,7 +51,8 @@ class FirstPresenter: FirstPresenterProtocol {
         let url = photoModels[ind].urls?.small
         if let cachedImage = imageCache.object(forKey: url! as NSString){
             compl(cachedImage)
-       
+            print("image number \(ind) downloaded from cache")
+
         } else {
             networkService?.fetcImage(from: photoModels[ind]) { [weak self] image in
                 guard let image = image else { return }
