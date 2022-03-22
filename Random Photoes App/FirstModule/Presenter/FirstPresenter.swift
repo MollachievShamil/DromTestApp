@@ -48,8 +48,9 @@ class FirstPresenter: FirstPresenterProtocol {
     //MARK: - Fetch photos from urls
     func getImage(ind: Int, compl: @escaping ((UIImage) -> Void)) {
        
-        let url = photoModels[ind].urls?.small
-        if let cachedImage = imageCache.object(forKey: url! as NSString){
+        guard let url = photoModels[ind].urls?.small else { return }
+      
+        if let cachedImage = imageCache.object(forKey: url as NSString){
             compl(cachedImage)
             print("image number \(ind) downloaded from cache")
 
@@ -57,7 +58,7 @@ class FirstPresenter: FirstPresenterProtocol {
             networkService?.fetcImage(from: photoModels[ind]) { [weak self] image in
                 guard let image = image else { return }
                 compl(image)
-                self?.imageCache.setObject(image, forKey: url! as NSString)
+                self?.imageCache.setObject(image, forKey: url as NSString)
                 print("image number \(ind) has been cached")
             }
         }

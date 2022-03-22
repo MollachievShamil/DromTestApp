@@ -9,7 +9,6 @@ import UIKit
 
 class FirstVC: UIViewController {
     
-    
     var presenter: FirstPresenterProtocol!
     
     override func viewDidLoad() {
@@ -61,12 +60,13 @@ extension FirstVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? FirstVCCell {
-            UIView.animate(withDuration: 0.6) {
+            UIView.animate(withDuration: 0.5) {
                 cell.frame.origin.x = self.view.bounds.width
                 cell.alpha = 0
             } completion: { [weak self] _ in
                self?.presenter.photoModels.remove(at: indexPath.row)
                 collectionView.deleteItems(at: [indexPath])
+               
             }
         }
     }
@@ -115,5 +115,17 @@ extension FirstVC: FirstViewProtocol {
     }
 }
 
+//MARK: -  CollectionView Extension
 
-
+extension UICollectionViewFlowLayout {
+    open override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    
+        let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+        attributes?.alpha = 0.0
+        attributes?.transform = CGAffineTransform(
+            scaleX: 0.95,
+            y: 1
+        )
+      return attributes
+    }
+}

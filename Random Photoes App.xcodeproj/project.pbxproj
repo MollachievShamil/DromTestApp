@@ -66,9 +66,9 @@
 		B3E329ED27E9680C0043B629 /* Random Photoes App */ = {
 			isa = PBXGroup;
 			children = (
-				B3E32A0A27E99DB10043B629 /* Network */,
-				B3E32A0427E99D550043B629 /* Assembly.swift */,
-				B3E32A0227E99D3A0043B629 /* Router.swift */,
+				B3E32A1527E9BB3A0043B629 /* ModuleBuilder */,
+				B3E32A1427E9BB2F0043B629 /* Navigation */,
+				B3E32A0A27E99DB10043B629 /* Networkservice */,
 				B3E32A1327E99E220043B629 /* FirstModule */,
 				B3E329EE27E9680C0043B629 /* AppDelegate.swift */,
 				B3E329F027E9680C0043B629 /* SceneDelegate.swift */,
@@ -79,13 +79,13 @@
 			path = "Random Photoes App";
 			sourceTree = "<group>";
 		};
-		B3E32A0A27E99DB10043B629 /* Network */ = {
+		B3E32A0A27E99DB10043B629 /* Networkservice */ = {
 			isa = PBXGroup;
 			children = (
 				B3E32A0627E99D780043B629 /* NetworkService.swift */,
 				B3E32A0827E99D8E0043B629 /* PhotoModel.swift */,
 			);
-			path = Network;
+			path = Networkservice;
 			sourceTree = "<group>";
 		};
 		B3E32A1127E99E0E0043B629 /* View */ = {
@@ -112,6 +112,22 @@
 				B3E32A1127E99E0E0043B629 /* View */,
 			);
 			path = FirstModule;
+			sourceTree = "<group>";
+		};
+		B3E32A1427E9BB2F0043B629 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A0227E99D3A0043B629 /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B3E32A1527E9BB3A0043B629 /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				B3E32A0427E99D550043B629 /* Assembly.swift */,
+			);
+			path = ModuleBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
